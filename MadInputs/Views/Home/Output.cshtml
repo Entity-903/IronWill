@@ -1,0 +1,38 @@
+﻿@{
+	ViewData["Title"] = "Output";
+}
+
+<div class="text-center">
+	<h1>@ViewData["Title"]</h1>
+	<div class="row">
+		<div class="col-12">
+				<!-- If no empty fields submitted -->
+				@if (!string.IsNullOrEmpty(ViewBag.First) && !string.IsNullOrEmpty(ViewBag.Second) && !string.IsNullOrEmpty(ViewBag.Third) && !string.IsNullOrEmpty(ViewBag.Fourth) && !string.IsNullOrEmpty(ViewBag.Fifth))
+				{
+					<h4>
+					Today, every student has a computer small enough to fit into his <u>@ViewBag.First</u>.
+					He can solve any math problem by simply pushing the computer's little <u>@ViewBag.Second</u>.
+					Computers can add, multiply, divide, and <u>@ViewBag.Third</u>.
+					They can also be better than a(n) <u>@ViewBag.Fourth</u>.
+					Some computers are <u>@ViewBag.Fifth</u>.
+					</h4>
+				} else
+				{
+				<h1><b>You missed a field my guy!</b></h1>
+				}
+		</div>
+	</div>
+	<div class="container">
+		<a asp-area="" asp-controller="Home" asp-action="Input">Return to Input</a>
+	</div>
+</div>
+
+<!--
+
+				Today, every student has a computer small enough to fit into his _____. (noun)
+				He can solve any math problem by simply pushing the computer's little _____. (noun, plural)
+				Computers can add, multiply, divide, and _____. (verb, present tense)
+				They can also be better than a(n) _____. (noun)
+				Some computers are _____. (adjective)
+
+-->

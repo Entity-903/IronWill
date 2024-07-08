@@ -1,0 +1,39 @@
+﻿@{
+	ViewData["Title"] = "Input";
+}
+
+<div class="text-center">
+	<h1 class="display-4">@ViewData["Title"]</h1>
+	<form asp-controller="Home" asp-action="Output" method="post">
+		<div class="row">
+			<div class="col-12">
+				<input id="Input1" type="text" name="Input1" placeholder="Noun" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<input id="Input2" type="text" name="Input2" placeholder="Noun (Plural)" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<input id="Input3" type="text" name="Input3" placeholder="Verb (Present Tense)" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<input id="Input4" type="text" name="Input4" placeholder="Noun" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<input id="Input5" type="text" name="Input5" placeholder="Adjective" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<button type="submit">Submit</button>
+			</div>
+		</div>
+	</form>
+</div>
