@@ -1,0 +1,21 @@
+﻿<div class="text-center">
+	<div class="row">
+		@* ASP-Route example*@
+		<a asp-controller="Home" asp-action="ParamTest" asp-route-id="606"
+		   asp-route-s="Route Success">ASP-Route Submission</a>
+	</div>
+
+	<div class="row">
+		@* Query Parameter example*@
+		<a href="/home/ParamTest?id=606&s=Query Success">Query Parameter Submission</a>
+	</div>
+
+	<div class="row">
+		@* Form Parameters example*@
+		<form asp-controller="Home" asp-action="ParamTest" method="post">
+			<input type="text" name="s" />
+			<input type="text" hidden name="id" value="404" />
+			<button type="submit">Form Parameters Submission</button>
+		</form>
+	</div>
+</div>
