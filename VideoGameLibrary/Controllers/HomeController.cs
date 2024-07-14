@@ -13,12 +13,12 @@ namespace VideoGameLibrary.Controllers
 			_logger = logger;
 		}
 
-		public IActionResult Index()
+		public IActionResult Welcome()
 		{
 			return View();
 		}
 
-		public IActionResult Privacy()
+		public IActionResult Collection()
 		{
 			return View();
 		}
