@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MadInputs", "MadInputs\MadI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendThreeWays", "SendThreeWays\SendThreeWays.csproj", "{A8371EE7-6830-4E07-BE4B-428C2F37D218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing", "Routing\Routing.csproj", "{A6368FE3-3107-4175-A553-FD88FB6B1CE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routing", "Routing\Routing.csproj", "{A6368FE3-3107-4175-A553-FD88FB6B1CE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameLibrary", "VideoGameLibrary\VideoGameLibrary.csproj", "{6D09CF88-A262-4C7E-8A17-A84163D616A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoGameLibrary", "VideoGameLibrary\VideoGameLibrary.csproj", "{6D09CF88-A262-4C7E-8A17-A84163D616A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "Validation\Validation.csproj", "{FF42C229-F06F-4AFE-B3F4-15A7CDCFA4A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6D09CF88-A262-4C7E-8A17-A84163D616A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D09CF88-A262-4C7E-8A17-A84163D616A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D09CF88-A262-4C7E-8A17-A84163D616A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF42C229-F06F-4AFE-B3F4-15A7CDCFA4A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF42C229-F06F-4AFE-B3F4-15A7CDCFA4A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF42C229-F06F-4AFE-B3F4-15A7CDCFA4A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF42C229-F06F-4AFE-B3F4-15A7CDCFA4A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

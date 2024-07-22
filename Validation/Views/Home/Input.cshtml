@@ -1,0 +1,80 @@
+﻿@model UserInput
+@{
+	ViewData["Title"] = "Validation Form";
+}
+
+<div class="text-center">
+	<form asp-controller="Home" asp-action="Input" method="post">
+		<div class="row">
+			<div class="col-3">
+				@* Shows all errors *@
+				<div asp-validation-summary="All" class="text-danger"></div>
+				@*<label asp-for="Name"></label>*@
+				<input asp-for="Name" placeholder="Name" class="form-control" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				@*<label asp-for="Name"></label>*@
+				<input asp-for="Age" placeholder="Age" class="form-control" />
+				<span asp-validation-for="Age" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<h4>Address</h4>
+			</div>
+		</div>
+
+		@* Jointly Nullable Fields*@
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="Street" placeholder="Street" class="form-control" />
+				<span asp-validation-for="Street" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="City" placeholder="City" class="form-control" />
+				<span asp-validation-for="City" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="State" placeholder="State" class="form-control" />
+				<span asp-validation-for="State" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="ZipCode" placeholder="ZipCode" class="form-control" />
+				<span asp-validation-for="ZipCode" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<button type="submit" class="btn btn-secondary">Submit Form</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+@*
+
+    Name (cannot be blank or null)
+    Age (cannot be less the 5)
+    Address (Is jointly nullable; either all subfields or null or not)
+        Street
+        City
+        State
+        Zip Code
+
+*@
