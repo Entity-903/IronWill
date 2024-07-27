@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VideoGameLibraryPart2.Models;
 using VideoGameLibraryPart2.Interfaces;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace VideoGameLibraryPart2.Data
 {
@@ -25,7 +26,7 @@ namespace VideoGameLibraryPart2.Data
 			GameList.Add(game);
 		}
 
-		public void RemoveGame(int id)
+		public void DeleteGame(int id)
 		{
 			Game? foundGame = GetGame(id);
 			if (foundGame != null) GameList.Remove(foundGame);
@@ -39,6 +40,14 @@ namespace VideoGameLibraryPart2.Data
 		{
 			int id = GameList.FindIndex(x => x.Id == game.Id);
 			GameList[id] = game;
+		}
+
+		public IEnumerable<Game> SearchGames(string key)
+		{
+			// Returns the default list of games if key is null
+			if (string.IsNullOrEmpty(key)) return GameList;
+			// Otherwise, returns the list of games that contains the key within the their titles
+			return GameList.Where(game => game.Title.ToLower().Contains(key.ToLower()));
 		}
 	}
 }

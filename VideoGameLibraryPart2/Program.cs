@@ -30,3 +30,5 @@ namespace VideoGameLibraryPart2
 		}
 	}
 }
+
+// For whatever reason, the project is trying to read the assembly info from part 1, rather than part 2

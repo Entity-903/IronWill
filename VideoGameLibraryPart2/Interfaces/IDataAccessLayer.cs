@@ -7,9 +7,10 @@ namespace VideoGameLibraryPart2.Interfaces
 	public interface IDataAccessLayer
 	{
 		IEnumerable<Game> GetGames();
+		IEnumerable<Game> SearchGames(string key);
 		void AddGame(Game game);
-		void RemoveGame(int id);
-		Game? GetGame(int id);
 		void UpdateGame(Game game);
+		void DeleteGame(int id);
+		Game? GetGame(int id);
 	}
 }

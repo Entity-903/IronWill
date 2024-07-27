@@ -1,34 +1,42 @@
-﻿@model Game
+﻿@using VideoGameLibraryPart2.Models;
+@model Game
 
 @if (Model == null)
 {
-    <h2>No movie provided</h2>
+	<h2>No movie provided</h2>
 }
 else
 {
-    <h3>Title: @Model.Title</h3>
-    <img src="@Model.Image" width="250" />
-    <h3>Platform: @Model.Platform</h3>
-    <h3>Genre: @Model.Genre</h3>
-    <h3>Age Rating: @Model.AgeRating</h3>
-    <h3>Year: @Model.Year</h3>
-    @if (Model.LoanDate.HasValue)
-    {
-        <h3>Game was loaned to <b>@Model.LoanedTo</b> on <b>@Model.LoanDate.Value.ToShortDateString()</b></h3>
-        // Button to return loaned game
-        <form asp-controller="Game" asp-action="Collection" method="post">
-            <input hidden name="id" value="@Model.Id" />
-            <input hidden type="reset" name="endebted" class="form-control" />
-            <button type="submit" class="btn btn-secondary">Return Game</button>
-        </form>
-    }
-    else
-    {
-        // Form to loan out game on click
-        <form asp-controller="Game" asp-action="Collection" method="post">
-            <input type="hidden" name="id" value="@Model.Id"/>
-            <input type="text" name="endebted" placeholder="The Endebted" class="form-control"/>
-            <button type="submit" class="btn btn-secondary">Loan</button>
-        </form>
-    }
+	<div class="text-center">
+		<h3>Title: @Model.Title</h3>
+		<img src="@Model.Image" width="250" />
+		<h3>Platform: @Model.Platform</h3>
+		<h3>Genre: @Model.Genre</h3>
+		<h3>Age Rating: @Model.AgeRating</h3>
+		<h3>Year: @Model.Year</h3>
+		@if (Model.LoanDate.HasValue)
+		{
+			<h3>Game was loaned to <b>@Model.LoanedTo</b> on <b>@Model.LoanDate.Value.ToShortDateString()</b></h3>
+			// Button to return loaned game
+			<form asp-controller="Game" asp-action="Collection" method="post">
+				<input hidden name="id" value="@Model.Id" />
+				<input hidden type="reset" name="endebted" class="form-control" />
+				<button type="submit" class="btn btn-secondary">Return Game</button>
+			</form>
+		}
+		else
+		{
+			// Form to loan out game on click
+			<form asp-controller="Game" asp-action="Collection" method="post">
+				<input type="hidden" name="id" value="@Model.Id" />
+				<input type="text" name="endebted" placeholder="The Endebted" class="form-control" />
+				<button type="submit" class="btn btn-secondary">Loan</button>
+			</form>
+		}
+		@* Edit Button *@
+		<a asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary mx-2">Edit</a>
+
+		@* Delete Button *@
+		<a asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger mx-2">Delete</a>
+	</div>
 }

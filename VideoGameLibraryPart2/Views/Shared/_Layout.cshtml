@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - VideoGameLibrary</title>
+    <title>@ViewData["Title"] - VideoGameLibraryPart2</title>
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/VideoGameLibrary.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/VideoGameLibraryPart2.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Morph.css" asp-append-version="true" />
 </head>
 <body>
@@ -26,7 +26,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="Collection">Collection</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="Add">Add Game</a>
+                        </li>
                     </ul>
+                    <form class="d-flex" asp-controller="Game" asp-action="Search" method="post">
+                        <input name="key" class="form-control me-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -39,7 +46,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - VideoGameLibrary - Charles Massie III
+            &copy; 2024 - VideoGameLibraryPart2 - Charles Massie III
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,4 +1,4 @@
-namespace VideoGameLibrary.Models
+namespace VideoGameLibraryPart2.Models
 {
 	public class ErrorViewModel
 	{

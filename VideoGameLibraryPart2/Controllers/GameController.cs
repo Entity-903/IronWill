@@ -3,7 +3,7 @@ using VideoGameLibraryPart2.Data;
 using VideoGameLibraryPart2.Interfaces;
 using VideoGameLibraryPart2.Models;
 
-namespace VideoGameLibrary.Controllers
+namespace VideoGameLibraryPart2.Controllers
 {
 	public class GameController : Controller
 	{
@@ -42,6 +42,77 @@ namespace VideoGameLibrary.Controllers
 				game.LoanDate = DateTime.Now;
 			}
 			return View(dal.GetGames());
+		}
+
+		[HttpGet]
+		public IActionResult Edit(int? id)
+		{
+			if (id == null)
+			{
+				ViewData["Error"] = "Game ID is Null!";
+				return View();
+			}
+			else
+			{
+				Game? g = dal.GetGame((int)id);
+				if (g == null)
+				{
+					ViewData["Error"] = "Game with ID of " + id + " was not found";
+				}
+
+				return View(g);
+			}
+
+		}
+
+		[HttpPost]
+		public IActionResult Edit(Game game)
+		{
+			if (ModelState.IsValid)
+			{
+				dal.UpdateGame(game);
+				TempData["Success"] = "Updated " + game.Title.ToString() + " successfully!";
+				return RedirectToAction("Collection", "Game");
+			}
+			else
+			{
+				return View();
+			}
+
+
+		}
+
+		public IActionResult Delete(int id)
+		{
+			TempData["Success"] = dal.GetGame(id) + " was deleted!";
+			dal.DeleteGame(id);
+			return RedirectToAction("Collection", "Game");
+		}
+
+		[HttpGet]
+		public IActionResult Add()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public IActionResult Add(Game game)
+		{
+			if (ModelState.IsValid)
+			{
+				dal.AddGame(game);
+				return RedirectToAction("Collection", "Game");
+			}
+			else
+			{
+				return View();
+			}
+		}
+
+		[HttpPost]
+		public IActionResult Search(string? key)
+		{
+			return View("Collection", dal.SearchGames(key));
 		}
 
 	}

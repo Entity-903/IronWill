@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using VideoGameLibrary.Models;
+using VideoGameLibraryPart2.Models;
 
-namespace VideoGameLibrary.Controllers
+namespace VideoGameLibraryPart2.Controllers
 {
 	public class HomeController : Controller
 	{
@@ -14,11 +14,6 @@ namespace VideoGameLibrary.Controllers
 		}
 
 		public IActionResult Welcome()
-		{
-			return View();
-		}
-
-		public IActionResult Collection()
 		{
 			return View();
 		}
