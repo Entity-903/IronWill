@@ -31,8 +31,4 @@ namespace VideoGameLibraryPart2
 	}
 }
 
-// For whatever reason, the project makes no changes when I say to replace
-// VideoGameLibraryPart2
-//         with
-// VideoGameLibraryPart3
-// within the entire, current, project
+// For whatever reason, the project is trying to read the assembly info from part 1, rather than part 2
