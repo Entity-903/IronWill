@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoGameLibrary", "VideoGa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validation", "Validation\Validation.csproj", "{FF42C229-F06F-4AFE-B3F4-15A7CDCFA4A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameLibraryPart2", "VideoGameLibraryPart2\VideoGameLibraryPart2.csproj", "{DC425E3F-481E-454E-B660-F607DA153EB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoGameLibraryPart2", "VideoGameLibraryPart2\VideoGameLibraryPart2.csproj", "{DC425E3F-481E-454E-B660-F607DA153EB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoGameLibraryPart3", "VideoGameLibraryPart3\VideoGameLibraryPart3.csproj", "{008D90BB-6457-4986-91C1-DBF9DE75F4AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{DC425E3F-481E-454E-B660-F607DA153EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC425E3F-481E-454E-B660-F607DA153EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC425E3F-481E-454E-B660-F607DA153EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008D90BB-6457-4986-91C1-DBF9DE75F4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008D90BB-6457-4986-91C1-DBF9DE75F4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008D90BB-6457-4986-91C1-DBF9DE75F4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008D90BB-6457-4986-91C1-DBF9DE75F4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

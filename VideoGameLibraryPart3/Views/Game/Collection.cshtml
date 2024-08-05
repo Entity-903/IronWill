@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Game>
+
+
+@{
+	ViewData["Title"] = "Video Game Collection";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+
+<h1>Current # of Games: @Model.Count()</h1>
+
+@if (Model == null || Model.Count() == 0)
+{
+	<h2>No Games Provided</h2>
+}
+else
+{
+	<div class="row">
+		@foreach (Game game in Model)
+		{
+			<div class="col-3">
+				<partial name="_GamePartialView.cshtml" for="@game" />
+			</div>
+		}
+	</div>
+
+}

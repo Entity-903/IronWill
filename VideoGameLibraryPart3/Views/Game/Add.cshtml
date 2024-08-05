@@ -1,0 +1,65 @@
+﻿@model Game
+@{
+	ViewData["Title"] = "Add New Game";
+}
+
+<div class="text-center">
+	<form asp-controller="Game" asp-action="Add" method="post">
+		<div class="row">
+			<div class="col-3">
+				@* Shows all errors *@
+				<div asp-validation-summary="All" class="text-danger"></div>
+				@*<label asp-for="Name"></label>*@
+				<input asp-for="Title" placeholder="Title" class="form-control" />
+				<span asp-validation-for="Title" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="Image" placeholder="Image" class="form-control" />
+				<span asp-validation-for="Image" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="Platform" placeholder="Platform" class="form-control" />
+				<span asp-validation-for="Platform" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="Genre" placeholder="Genre" class="form-control" />
+				<span asp-validation-for="Genre" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="AgeRating" placeholder="AgeRating" class="form-control" />
+				<span asp-validation-for="AgeRating" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<input asp-for="Year" placeholder="Year" class="form-control" />
+				<span asp-validation-for="Year" class="text-danger"></span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-3">
+				<button type="submit" class="btn btn-secondary">Submit Changes</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+@* 
+	New Games cannot be altered or even removed unlike hard coded games. 
+	Suspecting it has something to do with the ID field. 
+	I do not remember how we assign IDs upon creation of a game
+*@
