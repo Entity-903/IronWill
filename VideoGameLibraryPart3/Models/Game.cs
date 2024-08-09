@@ -4,8 +4,8 @@ namespace VideoGameLibraryPart2.Models
 {
     public class Game
     {
-        private static int nextID = 0;
-        public int? Id { get; set; } = nextID++;
+        [Key]
+        public int? Id { get; set; }
 
         [Required( ErrorMessage = "Title Required")]
         public string Title { get; set; }

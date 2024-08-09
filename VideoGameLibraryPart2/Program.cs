@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using VideoGameLibraryPart2.Data;
+
 namespace VideoGameLibraryPart2
 {
 	public class Program
@@ -8,6 +11,7 @@ namespace VideoGameLibraryPart2
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+			builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 			var app = builder.Build();
 
