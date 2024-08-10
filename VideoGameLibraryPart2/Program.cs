@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using VideoGameLibraryPart2.Data;
+using VideoGameLibraryPart2.Interfaces;
 
 namespace VideoGameLibraryPart2
 {
@@ -12,6 +13,7 @@ namespace VideoGameLibraryPart2
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
 			builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+			builder.Services.AddTransient<IDataAccessLayer, VideoGameListDAL>();
 
 			var app = builder.Build();
 

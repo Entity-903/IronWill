@@ -12,5 +12,7 @@ namespace VideoGameLibraryPart2.Interfaces
 		void UpdateGame(Game game);
 		void DeleteGame(int id);
 		Game? GetGame(int id);
+
+		IEnumerable<Game> FilterGames(string genre, string platform, string ageRating);
 	}
 }
